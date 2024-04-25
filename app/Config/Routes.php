@@ -17,6 +17,8 @@ $routes->get('/pages/nutrisi', 'Pages::nutrisi');
 $routes->get('/Penugasan', 'Penugasan::index');
 $routes->get('/pages/tabel', 'Pages::tabel');
 $routes->get('/pages/relayDown', 'Pages::relayDown');
+$routes->get('/pages/relayUp', 'Pages::relayUp');
+$routes->get('/pages/relayNutrisi', 'Pages::relayNutrisi');
 $routes->get('/pages/kontrol', 'Pages::kontrol');
 $routes->get('/pages/urlData/(:num)/(:num)/(:any)/(:any)/(:any)', 'Pages::urlData/$1/$2/$3/$4/$5');
 $routes->setAutoRoute(true);

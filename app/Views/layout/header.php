@@ -56,6 +56,17 @@
                 value = "OFF"
             }
             document.getElementById('status2').innerHTML = value
+
+            var xmlHttp = new XMLHttpRequest()
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    // ambil respon website
+                    document.getElementById('status2').innerHTML = xmlHttp.responseText
+                }
+            }
+            // merubah nilai didatabase
+            xmlHttp.open("GET", "<?= base_url('pages/relayUp') ?>?stat=" + value, true)
+            xmlHttp.send()
         }
 
         function nutrisi(value) {
@@ -66,6 +77,17 @@
                 value = "OFF"
             }
             document.getElementById('status3').innerHTML = value
+
+            var xmlHttp = new XMLHttpRequest()
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    // ambil respon website
+                    document.getElementById('status3').innerHTML = xmlHttp.responseText
+                }
+            }
+            // merubah nilai didatabase
+            xmlHttp.open("GET", "<?= base_url('pages/relayNutrisi') ?>?stat=" + value, true)
+            xmlHttp.send()
         }
 
         // js untuk mengambil nilai parameter pada url

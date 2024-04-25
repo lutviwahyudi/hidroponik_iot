@@ -131,13 +131,25 @@ class Pages extends BaseController
         $stat = $this->request->getVar('stat');
 
         if ($stat == "ON") {
-            $this->RelayModel->update(1, ['phup' => 1]);
+            $this->RelayModel->update(2, ['phup' => 1]);
 
             echo "ON";
 
         }else {
-            $this->RelayModel->update(1, ['phup' => 0]);
+            $this->RelayModel->update(2, ['phup' => 0]);
 
+            echo "OFF";
+        }
+    }
+
+    public function relayNutrisi() {
+        $stat = $this->request->getVar('stat');
+
+        if ($stat == "ON") {
+            $this->RelayModel->update(3, ['nutrisi' => 1]);
+            echo "ON";
+        }else{
+            $this->RelayModel->update(3, ['nutrisi' => 0]);
             echo "OFF";
         }
     }
